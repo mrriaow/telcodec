@@ -1,15 +1,3 @@
-"""PLMN identity (MCC + MNC) packed into 3 bytes, per 3GPP TS 24.008 section 10.5.1.3.
-
-Each cell is one nibble, written high | low:
-
-    byte 1:  MCC digit 2 | MCC digit 1
-    byte 2:  MNC digit 3 | MCC digit 3     (MNC digit 3 is 0xF for a 2-digit MNC)
-    byte 3:  MNC digit 2 | MNC digit 1
-
-    ("310", "260")  ->  0x13 0x00 0x62
-    ("001", "01")   ->  0x00 0xF1 0x10
-"""
-
 from telcodec._common import FILLER, swap_pairs, validate_digits
 
 

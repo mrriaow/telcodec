@@ -21,18 +21,18 @@ pip install .
 ```python
 from telcodec import gsm7, imsi, msisdn, plmn, tbcd
 
-tbcd.encode("12345").hex()                  # '2143f5'
-tbcd.decode(bytes.fromhex("2143f5"))        # '12345'
+tbcd.encode("12345").hex()  # '2143f5'
+tbcd.decode(bytes.fromhex("2143f5"))  # '12345'
 
-plmn.encode("310", "260").hex()             # '130062'
-plmn.decode(bytes.fromhex("00f110"))        # ('001', '01')
+plmn.encode("310", "260").hex()  # '130062'
+plmn.decode(bytes.fromhex("00f110"))  # ('001', '01')
 
-imsi.split("001010123456789", 2)            # ('001', '01', '0123456789')
+imsi.split("001010123456789", 2)  # ('001', '01', '0123456789')
 
-msisdn.encode("+14155550123").hex()         # '914151550521f3'
+msisdn.encode("+14155550123").hex()  # '914151550521f3'
 
-gsm7.encode("hello").hex()                  # 'e8329bfd06'
-gsm7.decode(bytes.fromhex("e8329bfd06"), 5) # 'hello'
+gsm7.encode("hello").hex()  # 'e8329bfd06'
+gsm7.decode(bytes.fromhex("e8329bfd06"), 5)  # 'hello'
 ```
 
 invalid input raises `ValueError`. decoders accept only bytes the matching encoder would produce.
